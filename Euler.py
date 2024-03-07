@@ -8,7 +8,7 @@ Description:Calculates Euler's Method given first order differential equation, i
 from sympy import *
 from sympy import symbols
 x, y=symbols('x y')
-
+#comment
 #Paameters to be changed by users
 diffEQ=y
 x0=0
