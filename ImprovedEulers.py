@@ -1,12 +1,9 @@
 """
-File Name: Euler's Method
-Author: Natasha Ambeskar
-Date:3/6/2024
-File Name: Euler's Method
+File Name: Improved Euler's Method
 Author: Natasha Ambeskar
 Date:3/6/2024
 
-Description:Calculates Euler's Method given first order differential equation, initial values, increment size, and final x-value.
+Description:Calculates Improved Euler's Method given first order differential equation, initial values, increment size, and final x-value.
 """
 from sympy import *
 from sympy import symbols
