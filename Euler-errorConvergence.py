@@ -40,5 +40,7 @@ yf=Eulers(diffEQ,x0,y0,xf,step,sol)
 print('')
 yf=Eulers(diffEQ,x0,y0,xf,0.05,sol)
 
-#The final error value for a step size of 0.05 is half of the value of the final error value listed for a step size of 0.05. Given that the global error should be proportional to step size, deceasing the step size by a factor of one-half should also decrease the error by a factor of one-half, which is demonstrated in the output, thus proving that error converges. 
+#The final error value for a step size of 0.05 is half of the value of the final error value listed for a step size of 0.05. 
+#Given that the global error should be proportional to step size, deceasing the step size by a factor of one-half should also decrease the error by a factor of one-half,
+#which is demonstrated in the output, thus proving that error converges. 
 
