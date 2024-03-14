@@ -41,4 +41,6 @@ def ImprovedEulers(diffEQ,x0,y0,xf,step,sol):                  #uses Improved Eu
 yf=ImprovedEulers(diffEQ,x0,y0,xf,step,sol)
 print('')
 yf=ImprovedEulers(diffEQ,x0,y0,xf,0.05,sol)
-#The final error value for a step size of 0.05 is one-fourth of the value of the final error value listed for a step size of 0.05. Given that the global error should be proportional to step size squared for improved euler's method, deceasing the step size by a factor of one-half should decrease the error by a factor of one-fourth, which is demonstrated in the output, thus proving that error converges.
+#The final error value for a step size of 0.05 is one-fourth of the value of the final error value listed for a step size of 0.05. 
+#Given that the global error should be proportional to step size squared for improved euler's method, deceasing the step size by a factor of one-half should decrease the error by a factor of one-fourth,
+#which is demonstrated in the output, thus proving that error converges.
