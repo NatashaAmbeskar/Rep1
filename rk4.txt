@@ -1,0 +1,33 @@
+"""
+File Name: rk4
+Author: Natasha Ambeskar
+Date:3/21/2024
+
+Description:Uses rk4 to calculate solution of differential equation at certain point given first order differential equation, initial values, increment size, and final x-value.
+"""
+
+
+from sympy import *
+from sympy import symbols
+x, y=symbols('x y')
+
+#Parameters to be changed by users
+diffEQ=2*x*y
+x0=1
+y0=1
+step=0.1
+xf=1.5
+
+def rk4(diffEQ,x0,y0,step,xf):                               #Method that calculates solution of given differential equation at specified x-value using rk4 method
+    iterations=int((xf-x0)/step)                             #Calculates number of times rk4 must be performed to reach desired x-value with given step size
+    for i in range(iterations):
+        k1=diffEQ.subs({x:x0,y:y0})                          #Calculates slope of solution at initial values
+        k2=diffEQ.subs({x:x0+(step/2),y:y0+step*(k1/2)})     #Calculates slope of solution at x and y values half way through the step interval
+        k3=diffEQ.subs({x:x0+(step/2),y:y0+step*(k2/2)})     #re-calculates slope of solution halfway through step interval using average slope of k1 and k2
+        k4=diffEQ.subs({x:x0+step,y:y0+step*(k3)})           #calculates slope of solution at end of step interval using slope k3
+        y0+=(step/6)*(k1+2*k2+2*k3+k4)                       #calculates final y-value for step using weighted average of four slopes as the final slope.
+        x0+=step
+    return y0
+
+yf=rk4(diffEQ,x0,y0,step,xf) 
+print(yf)
