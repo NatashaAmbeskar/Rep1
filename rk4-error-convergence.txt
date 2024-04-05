@@ -1,0 +1,42 @@
+"""
+File Name: rk4: error convergence
+Author: Natasha Ambeskar
+Date:3/21/2024
+
+Description:Tests rk4 error convergence
+"""
+
+
+from sympy import *
+from sympy import symbols
+x, y=symbols('x y')
+
+#Parameters to be changed by users
+diffEQ=2*x*y
+x0=1
+y0=1
+step=0.1
+xf=1.5
+sol=exp((x**2)-1)
+
+def rk4(diffEQ,x0,y0,step,xf,sol):
+    iterations=int((xf-x0)/step)
+    print('for step: ',step)
+    
+    for i in range(iterations):
+        k1=diffEQ.subs({x:x0,y:y0})
+        k2=diffEQ.subs({x:x0+(step/2),y:y0+step*(k1/2)}) 
+        k3=diffEQ.subs({x:x0+(step/2),y:y0+step*(k2/2)})
+        k4=diffEQ.subs({x:x0+step,y:y0+step*(k3)})
+        y0+=(step/6)*(k1+2*k2+2*k3+k4)
+        x0+=step
+        actVal=float(sol.subs(x,x0).evalf())
+        error=float(abs(actVal-y0))
+        print(f'{x0:.3f},{y0:.10f},{actVal:.10f},{error:.10f}') #for each loop, prints x-value, y-value, actual value, and error
+    #return y0
+
+yf=rk4(diffEQ,x0,y0,step,xf,sol) 
+#print(yf)
+yf=rk4(diffEQ,x0,y0,0.05,xf,sol)
+yf=rk4(diffEQ,x0,y0,0.025,xf,sol)
+#error decreases in accrodance with global error (O(h^4))
