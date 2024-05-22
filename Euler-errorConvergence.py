@@ -3,7 +3,7 @@ File Name: Euler's Method: error convergence
 Author: Natasha Ambeskar
 Date:3/6/2024
 
-Description:Calculates Euler's Method given first order differential equation, initial values, increment size, and final x-value.
+Description:Proves error convergence for  Euler's Method given first order differential equation, initial values, increment size, and final x-value.
 """
 from sympy import *
 from sympy import symbols
@@ -18,10 +18,10 @@ step=0.1
 xf=1.5
 sol=exp((x**2)-1)
 
-def Eulers(diffEQ,x0,y0,xf,step,sol):             #uses Euler's method to approximate value of function at xF 
-    if(step>(xf-x0)):                         #prevents steps that go past the final value
+def Eulers(diffEQ,x0,y0,xf,step,sol):             #uses Euler's method to approximate value of function at final x value
+    if(step>(xf-x0)):                             #prevents steps that go past the final value
         print("step too big")
-    elif(step<10**(-6)):                      #prevents step size of 0
+    elif(step<10**(-6)):                          #prevents step size of 0
         print("step too small")
     else:
         print('for step size:', step)
