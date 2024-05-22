@@ -3,7 +3,7 @@ File Name: rk4: error convergence
 Author: Natasha Ambeskar
 Date:3/21/2024
 
-Description:Tests rk4 error convergence
+Description:Proves rk4 error convergence
 """
 
 
@@ -19,7 +19,7 @@ step=0.1
 xf=1.5
 sol=exp((x**2)-1)
 
-def rk4(diffEQ,x0,y0,step,xf,sol):
+def rk4(diffEQ,x0,y0,step,xf,sol):                             #performs rk4
     iterations=int((xf-x0)/step)
     print('for step: ',step)
     
@@ -32,11 +32,11 @@ def rk4(diffEQ,x0,y0,step,xf,sol):
         x0+=step
         actVal=float(sol.subs(x,x0).evalf())
         error=float(abs(actVal-y0))
-        print(f'{x0:.3f},{y0:.10f},{actVal:.10f},{error:.10f}') #for each loop, prints x-value, y-value, actual value, and error
+        print(f'{x0:.3f},{y0:.10f},{actVal:.10f},{error:.10f}') #for each iteration, prints x-value, y-value, actual value, and error(actual value minus calculated y value)
     #return y0
 
 yf=rk4(diffEQ,x0,y0,step,xf,sol) 
 #print(yf)
 yf=rk4(diffEQ,x0,y0,0.05,xf,sol)
 yf=rk4(diffEQ,x0,y0,0.025,xf,sol)
-#error decreases in accrodance with global error (O(h^4))
+#with each decrease in step size, error decreases in accrodance with global error (O(h^4)), thus proving error convergence
