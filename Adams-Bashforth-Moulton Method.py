@@ -5,7 +5,12 @@ from math import *
 """
 Name: Natasha Ambeskar
 Date: 04/01/2024
-Description: Adams-Bashforth-Moulton Method for approximating differential equations
+Description: Adams-Bashforth-Moulton Method for approximating the solution to first order differential equations at a desired point.
+Parameters:
+Differential Equation
+initial x and y values for the function that is a solution to the given differential equation
+Final x value at which point the method should find the value of the solution to the differntial equation
+Step size desired by user when traversing the interval from initial to final x value
 
 """
 # Parameters to be changed by user
