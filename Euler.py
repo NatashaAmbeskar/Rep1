@@ -3,7 +3,13 @@ File Name: Euler's Method
 Author: Natasha Ambeskar
 Date:3/6/2024
 
-Description:Calculates Euler's Method given first order differential equation, initial values, increment size, and final x-value.
+Description:Uses Euler's Method to approximate value of solution to a given differntial equation at a desired point.
+Parameters: 
+Differential Equation(diffEQ)
+Initial x(x0) and y(y0) values for the solution of the given differential equation
+final x(xf) value for which the method should find the value of the solution of the diffEQ
+step size(step) desired by user when travesring the interval from initial to final x values(small step size results in higher accuracy)
+
 """
 from sympy import *
 from sympy import symbols
